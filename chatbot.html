@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link
+        href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Rubik+Dirt&family=Share+Tech+Mono&display=swap"
+        rel="stylesheet">
+        <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+  
+  
+       
+  
+  <link rel="stylesheet" href="css/darkmode.css">
+  <link rel="stylesheet" href="css/chatbot.css"> 
+<link rel="stylesheet" href="css/style.css">
+  <title>Cody's Notes chat</title>
+</head>
+<body>
+
+  <header class="header">
+    <nav class="header__menu">
+
+      <a href="index.html" class="log_out"> Atrás</a>
+
+      <button class="dark-mode" id="dark-mode">        
+      <span><i class="uil uil-sun dark-mode-icon"></i></span>
+      <span><i class="uil uil-moon"></i></span>   
+      </button>    
+
+    </nav>
+
+    <h1 class="header-title">Cody Note's</h1>
+    
+ </header>
+  
+
+  
+    <div class="content">
+        <textarea class="result" id="result" rows="10" disabled  placeholder="CodyBot" style="height: 70%;"></textarea>
+  
+      <textarea class="question" id="inputQuestion" placeholder="Hola, soy un Codybot. ¿En qué puedo ayudarte hoy?" style="height: 20%;"></textarea>
+    </div>
+
+
+  <script type="module" src="js/chatbot.js"></script>
+  <script type="module" src="js/dark-mode.js"></script>    
+</body>
+</html>

@@ -1,0 +1,428 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+
+:root {
+    --white: #ffffff;
+    --black: #0000;
+
+    --dark-blue: #071E3D;
+    --blue: #1F4287;
+    --turquesa: #278EA5;
+    --green: #21E6C1;    
+    --burger: #1F528D;   
+    
+    --fuente:'Quicksand', sans-serif;   
+
+}
+
+
+* {
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+    font-family: var(--fuente);
+    box-sizing: border-box;
+    text-decoration: none;
+    
+}
+
+a:visited, .chatbot:visited {
+  color: var(--green);
+}
+
+
+body {
+    
+    background-color: var(--blue);
+    max-width: 800px;
+    height: 100vh;
+    color: var(--green);
+    font-size: 16px;   
+    padding: 1em;
+    transition: .3s ease all;
+   
+}
+
+main {
+  display: flex;
+  justify-content: center;
+}
+
+
+
+
+.header__menu {
+  display: flex;
+  justify-content: space-between;
+}
+
+
+.header-title {    
+  
+  font-size: 2em;    
+  margin-top: 1em;
+  text-align: center;
+  font-family: var(--fuente);
+
+}
+
+
+.log_out{
+  left: 128px; 
+  cursor: pointer;
+  display: block;
+}
+
+.log_out:hover {
+
+  text-decoration: underline;
+
+}
+
+
+.wrapper{
+  margin: 50px;
+  display: grid;
+  gap: 25px;
+  grid-template-columns: repeat(auto-fill, 265px);
+}
+
+
+.wrapper li{
+  height: 250px; 
+  border-radius: 5px;
+  padding: 15px 20px 20px;
+  background-color: var(--dark-blue);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+
+.add-box, .icon, .bottom-content, 
+.popup, .content-header, .settings .menu li{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+
+/* boton agregar nota */
+.add-box{
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: center;
+  border: 1px dashed var(--turquesa);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.11);
+}
+
+.add-box:hover {
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+
+.add-box .icon{
+
+  font-size: 4rem;   
+} 
+
+
+.add-box p{
+  color: var(--turquesa); 
+  font-weight: 500;
+  margin-top: 20px;
+}
+
+/* nota */
+.note{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+
+.note .details{
+  max-height: 165px;
+  overflow-y: auto;
+}
+
+
+
+.note p{
+  font-size: 1.5em;
+  font-weight: 500;
+}
+
+
+.note span{
+    display: block;
+    margin: 5px;
+    
+    padding-bottom: 17px;
+    color: var(--turquesa);
+}
+
+
+.note .bottom-content{
+  padding-top: 10px;
+  font-style: italic;
+    padding-top: 7px;
+    border-top: 1px solid var(--turquesa);
+}
+
+
+.bottom-content span{
+    color: var(--white);
+    font-size: 14px;
+}
+
+
+.bottom-content .settings{
+  position: relative;
+}
+
+
+.bottom-content .settings i{
+  color: var(--green);
+  cursor: pointer;
+  font-size: 15px;
+}
+
+
+.settings .menu{
+  z-index: 1;
+  bottom: 0;
+  right: -5px;
+  padding: 5px 0;
+  
+  position: absolute;
+  border-radius: 4px;
+  transform: scale(0);
+  transform-origin: bottom right;
+  box-shadow: 0 0 6px rgba(0,0,0,0.15);
+  transition: transform 0.2s ease;
+  
+}
+
+
+
+.settings.show .menu{
+  transform: scale(1);
+}
+
+
+
+.settings .menu li{
+  height: 25px;
+  font-size: 16px;
+  margin-bottom: 2px;
+  padding: 17px 15px;
+  cursor: pointer;
+  box-shadow: none;
+  border-radius: 0;
+  justify-content: flex-start;
+}
+
+
+
+.menu li:last-child{
+  margin-bottom: 0;
+}
+
+
+.menu li:hover{
+    background-color: #12335f;
+}
+.menu li i{
+  padding-right: 8px;
+}
+
+.popup-box{
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  height: 100%;
+  width: 100%;
+  background: rgba(0,0,0,0.4);
+}
+
+
+.popup-box .popup{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 3;
+  width: 100%;
+  max-width: 400px;
+  justify-content: center;
+  transform: translate(-50%, -50%) scale(0.95);
+}
+
+
+.popup-box, .popup{
+ 
+
+  display: none;
+  pointer-events: none;
+  transition: all 0.25s ease;
+}
+
+
+.popup-box.show, .popup-box.show .popup{
+  display: block;
+  pointer-events: auto;
+}
+
+
+.popup-box.show .popup{
+  transform: translate(-50%, -50%) scale(1);
+}
+
+
+.popup .content{
+    background-color: var(--dark-blue);
+    border-radius: 5px;
+    padding: 15px 25px;
+    width: calc(100% - 15px);
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
+
+
+.content-header{
+    border-bottom: 1px solid var(--turquesa);
+    padding: 15px 25px;
+}
+
+
+.content-header p{
+  font-size: 20px;
+  font-weight: 500;
+}
+
+
+.content-header i{
+    color: var(--turquesa);
+    cursor: pointer;
+    font-size: 23px;
+}
+
+
+.content form{
+  margin: 15px 25px 35px;
+}
+
+
+.content form .row{
+  margin-bottom: 20px;
+}
+
+
+form .row label{
+  font-size: 18px;
+  display: block;
+  margin-bottom: 6px;
+}
+
+
+form :where(input, textarea){
+    width: 100%;
+    height: 50px;
+    font-size: 17px;
+    padding: 5px 15px;
+    border: 1px solid var(--turquesa);
+    border-radius: 4px;
+}
+
+
+
+form :where(input, textarea):focus{
+  box-shadow: 0 2px 4px rgba(0,0,0,0.11);
+}
+
+
+form .row textarea{
+  height: 150px;
+  resize: none;
+  padding: 8px 15px;
+}
+
+
+form button{
+    width: 100%;
+    height: 50px;
+    border: none;
+    background-color: var(--blue);
+    color: var(--green);
+    cursor: pointer;
+    font-size: 17px;
+    border-radius: 4px;
+}
+
+
+
+
+/* chatgpt */
+
+.btn {
+  
+font-size: 1.5em;
+width: 50px;  
+height: 50px;  
+position: absolute;
+right: 1em;
+bottom: 1em;
+border-radius: 50px;  
+transition: all 0.3s;    
+border: 2px solid var(--green);  
+background: linear-gradient(to right, rgba(27, 253, 156, 0.1) 1%, transparent 40%,transparent 60% , rgba(27, 253, 156, 0.1) 100%);  
+color: var(--green);  
+box-shadow: inset 0 0 10px rgba(27, 253, 156, 0.4), 0 0 9px 3px rgba(27, 253, 156, 0.1);  
+cursor: pointer;
+}
+
+.btn:hover {
+  color: #82ffc9;
+  box-shadow: inset 0 0 10px rgba(27, 253, 156, 0.6), 0 0 9px 3px rgba(27, 253, 156, 0.2);
+}
+
+.uil-robot {
+  font-size: 2rem;
+}
+
+
+/* desktop queries */
+
+@media (min-width:1025px) { 
+
+  body {
+    max-width: 100%;
+    
+    
+  }
+
+  main { 
+      display: flex;
+      flex-direction: row;
+      
+     
+  }
+
+
+
+  .wrapper {
+    width: 100%;
+    margin: 50px;
+    display: grid;    
+    gap: 25px;
+    grid-template-columns: repeat(auto-fill, 265px);
+
+
+}
+
+.btn {
+  
+  bottom: 1.5em;
+
+} 
+
+
+} 
+
