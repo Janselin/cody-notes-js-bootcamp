@@ -24,9 +24,6 @@ Realizar una webapp con todo lo visto en el Bootcamp de Javascript.
 ⚙ El proyecto no necesita de ninguna instrucción especial para ejecutarlo.
 Solo conexión a internet y un navegador.
 
-<h3> -----  🗒 Live Demo 🗒 ----- </h3>
-
-[Cody's Notes](https://sebasgarzons.github.io/FinalProject-JavaScript-CodigoFacilito/)
 
 <h3> ----- 🗒 Documentación 🗒  ----- </h3>
 
